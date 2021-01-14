@@ -17,8 +17,8 @@ public class App {
 	static Set<String> sortedSet = new TreeSet<>();
 
 	public static void main(String[] args) throws IOException {
-		
-		//create the file in the directory if it doesn't exist
+
+		// create the file in the directory if it doesn't exist
 		File directory = new File(FOLDER);
 		if (!directory.exists()) {
 			directory.mkdir();
@@ -38,7 +38,7 @@ public class App {
 				businessLevelOperation();
 				break;
 			case "3":
-				System.out.println("Thank you for using My File Handling Application" + "\nExiting . . . .");
+				System.out.println("Thank you for using LockedMe.com" + "\nClosing Application . . . .");
 				System.exit(0);
 			default:
 				System.out.println("Invalid Option");
@@ -64,6 +64,7 @@ public class App {
 	}
 
 	public static void addFile() {
+		System.out.println("========Add a File========");
 		System.out.println("Please provide a file path: ");
 		String filePath = in.nextLine().toLowerCase();
 		Path path = Paths.get(filePath);
@@ -87,6 +88,7 @@ public class App {
 	}
 
 	public static void deleteFile() {
+		System.out.println("========Delete a File========");
 		System.out.println("Enter the name of the file to be deleted: ");
 		String fileNameToBeRemove = in.nextLine().toLowerCase();
 		String fileToBeDelete = FOLDER + "\\" + fileNameToBeRemove;
@@ -100,7 +102,7 @@ public class App {
 	}
 
 	public static void searchFile() {
-		System.out.println("------------------");
+		System.out.println("========Search a File========");
 		files = new File(FOLDER).listFiles();
 		System.out.print("Enter the filename you want to look for: ");
 		String searchFor = in.nextLine();
@@ -115,7 +117,7 @@ public class App {
 
 	public static void displayWelcomeScreen() {
 		System.out.println("******************************************");
-		System.out.printf("*\t%-33s*\n", "MY FILE HANDLING APPLICATION");
+		System.out.printf("*\t\t%-25s*\n", "LockedMe.com");
 		System.out.printf("*%-40s*\n", "");
 		System.out.printf("*%-40s*\n", "");
 		System.out.printf("*%40s*\n", "Developed by:");
@@ -159,4 +161,4 @@ public class App {
 		}
 	}
 
-}
+}//end of app
